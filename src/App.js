@@ -18,11 +18,11 @@ function App() {
 
   // Le useEffect va s'activer lorsque le module "socket" est modifié
   // Dans notre cas, c'est lorsque on reçoit un message du serveur
-  // useEffect(() => {
-  //   socket.on("receive_message", (data) => {
-
-  //   });
-  // }, [socket]);
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageReceived(data.message);
+    });
+  }, [socket]);
 
   return (
     <div className="App">
@@ -30,6 +30,8 @@ function App() {
         setMessage(event.target.value);
       }}/>
       <button onClick={sendMessage}>Send Message</button>
+      <h1>Messages :</h1>
+      <p>{messageReceived}</p>
     </div>
   );
 }
