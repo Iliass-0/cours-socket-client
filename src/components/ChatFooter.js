@@ -12,13 +12,16 @@ function ChatFooter({socket}) {
   };
 
   return (
-    <div>
-      <input 
-        type="text"
-        onChange={(event) => setMessage(event.target.value)}
-        placeholder="Your Message..."
-      />
-      <button onClick={sendMessage}>Send</button>
+    <div className='chat-footer'>
+      <div className='form'>
+        <input 
+          type="text"
+          className="message"
+          onChange={(event) => setMessage(event.target.value)}
+          placeholder="Your Message..."
+        />
+        <button className="sendBtn" onClick={sendMessage}>Send</button>
+      </div>
     </div>
   )
 }

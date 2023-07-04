@@ -11,15 +11,16 @@ function Home() {
     }
 
     return (
-      <div>
+      <div className="home-container">
         <h2>Sign in</h2>
         <label>Username : </label>
         <input 
             type="text"
+            className="user-input"
             placeholder='Your Name...'
             onChange={(event) => setUsername(event.target.value)}
         />
-        <button onClick={handleSubmit}>Go !</button>
+        <button className="home-btn" onClick={handleSubmit}>Go !</button>
       </div>
     )
 }

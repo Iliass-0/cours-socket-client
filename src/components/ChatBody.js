@@ -11,16 +11,36 @@ function ChatBody({messages}) {
 
   return (
     <div>
-      <header>
+      <header className="chatBody-header">
         <p>Welcome to Chat !</p>
-        <button onClick={leaveChat}>Leave</button>
+        <button className="leave-btn" onClick={leaveChat}>Leave</button>
       </header>
+      <div className='message-container'>
+        <div className="message-chats">
+          <p className="sender-name">You</p>
+          <div className='message-sender'>
+            <p>Hey</p>
+          </div>
+        </div>
+      </div>
 
-        {messages.map((message) => {
-          return (
-            <div>{message.text}</div>
-          )
-        })}
+      {/* <div className='message-chats'>
+        <p>Other</p>
+        <div className="message-recipient">
+          <p>Good and you?</p>
+        </div>
+      </div>
+
+      <div className="message-status">
+        <p>Someone is typing...</p>
+      </div> */}
+
+      {messages.map((message) => {
+        return (
+          <div>{message.text}</div>
+        )
+      })}
+      
     </div>
   )
 }

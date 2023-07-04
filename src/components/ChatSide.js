@@ -3,12 +3,12 @@ import React from 'react'
 function ChatSide() {
   return (
     <div className='chat-side'>
-        <h2>Users connected :</h2>
-        <ul>
-            <li>Tom</li>
-            <li>Alice</li>
-            <li>Bob</li>
-        </ul>
+      <h2 className="chat-header">Users connected :</h2>
+      <ul className='chat-users'>
+        <li>Tom</li>
+        <li>Alice</li>
+        <li>Bob</li>
+      </ul>
     </div>
   )
 }
