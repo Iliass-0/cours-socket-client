@@ -5,7 +5,6 @@ import {useEffect, useState} from 'react';
 const socket = io.connect('http://localhost:3001');
 
 function App() {
-
   // Ce state me permet de définir les valeur que je vais utiliser dans mon composant
   // Ici on définis le message que l'on va récupérer de L'INPUT
   const [message, setMessage] = useState("");
