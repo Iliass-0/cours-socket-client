@@ -14,7 +14,7 @@ function Chat({socket}) {
 
   return (
     <div className='chat'>
-        <ChatSide />
+        <ChatSide socket={socket} />
         <div className='chat-main'>
             <ChatBody messages={messages} />
             <ChatFooter socket={socket}/>

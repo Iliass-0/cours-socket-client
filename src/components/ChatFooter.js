@@ -4,11 +4,13 @@ function ChatFooter({socket}) {
   const [message, setMessage] = useState('');
 
   const sendMessage = () => {
-    socket.emit('send_message', {
-      text: message,
-      name: localStorage.getItem('username')
-    });
-    setMessage('');
+    if (message !== '' && localStorage.getItem('username')) {
+      socket.emit('send_message', {
+        text: message,
+        name: localStorage.getItem('username')
+      });
+      setMessage('');
+    }
   };
 
   return (

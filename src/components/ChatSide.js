@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ChatSide() {
+function ChatSide({socket}) {
   return (
     <div className='chat-side'>
       <h2 className="chat-header">Users connected :</h2>

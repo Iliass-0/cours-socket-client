@@ -15,6 +15,7 @@ function ChatBody({messages}) {
         <p>Welcome to Chat !</p>
         <button className="leave-btn" onClick={leaveChat}>Leave</button>
       </header>
+
       <div className='message-container'>
         <div className="message-chats">
           <p className="sender-name">You</p>
@@ -23,17 +24,6 @@ function ChatBody({messages}) {
           </div>
         </div>
       </div>
-
-      {/* <div className='message-chats'>
-        <p>Other</p>
-        <div className="message-recipient">
-          <p>Good and you?</p>
-        </div>
-      </div>
-
-      <div className="message-status">
-        <p>Someone is typing...</p>
-      </div> */}
 
       {messages.map((message) => {
         return (
