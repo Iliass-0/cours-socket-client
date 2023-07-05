@@ -10,8 +10,6 @@ function ChatBody({messages}) {
     window.location.reload();
   }
 
-  console.log(localStorage.getItem('username'));
-
   return (
     <div>
       <header className="chatBody-header">
@@ -23,14 +21,14 @@ function ChatBody({messages}) {
         {messages.map((message) => 
             message.name === localStorage.getItem('username') ? (
             <div key={message.id} className="message-chats">
-              <p className="sender-name">You</p>
+              <p className="sender-name">{message.name}</p>
               <div className='message-sender'>
                 <p>{message.text}</p>
               </div>
             </div>
             ) : (
             <div className="message-chats">
-              <p className="sender-name">You</p>
+              <p className="sender-name">{message.name}</p>
               <div className='message-recipient'>
                 <p>{message.text}</p>
               </div>
