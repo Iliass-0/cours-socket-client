@@ -7,6 +7,8 @@ function Home({socket}) {
 
     const handleSubmit = () => {
       localStorage.setItem('username', username);
+      // On crée un nouvel user
+      socket.emit('new_user', {username, socketID: socket.id});
       navigate('/chat');
     }
 

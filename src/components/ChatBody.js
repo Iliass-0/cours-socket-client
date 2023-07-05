@@ -7,7 +7,10 @@ function ChatBody({messages}) {
   const leaveChat = () => {
     localStorage.removeItem('username');
     navigate('/');
+    window.location.reload();
   }
+
+  console.log(localStorage.getItem('username'));
 
   return (
     <div>
@@ -19,7 +22,7 @@ function ChatBody({messages}) {
       <div className='message-container'>
         {messages.map((message) => 
             message.name === localStorage.getItem('username') ? (
-            <div className="message-chats">
+            <div key={message.id} className="message-chats">
               <p className="sender-name">You</p>
               <div className='message-sender'>
                 <p>{message.text}</p>

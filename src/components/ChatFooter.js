@@ -7,6 +7,7 @@ function ChatFooter({socket}) {
     if (message !== '' && localStorage.getItem('username')) {
       socket.emit('send_message', {
         text: message,
+        id: socket.id,
         name: localStorage.getItem('username')
       });
       setMessage('');
