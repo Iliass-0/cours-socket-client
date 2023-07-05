@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 function Home({socket}) {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
 
     const handleSubmit = () => {

@@ -17,20 +17,24 @@ function ChatBody({messages}) {
       </header>
 
       <div className='message-container'>
-        <div className="message-chats">
-          <p className="sender-name">You</p>
-          <div className='message-sender'>
-            <p>Hey</p>
-          </div>
-        </div>
+        {messages.map((message) => 
+            message.name === localStorage.getItem('username') ? (
+            <div className="message-chats">
+              <p className="sender-name">You</p>
+              <div className='message-sender'>
+                <p>{message.text}</p>
+              </div>
+            </div>
+            ) : (
+            <div className="message-chats">
+              <p className="sender-name">You</p>
+              <div className='message-recipient'>
+                <p>{message.text}</p>
+              </div>
+            </div>
+          )
+        )}
       </div>
-
-      {messages.map((message) => {
-        return (
-          <div>{message.text}</div>
-        )
-      })}
-      
     </div>
   )
 }
