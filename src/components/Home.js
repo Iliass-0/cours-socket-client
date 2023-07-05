@@ -21,6 +21,9 @@ function Home({socket}) {
             className="user-input"
             placeholder='Your Name...'
             onChange={(event) => setUsername(event.target.value)}
+            onKeyDown={(event) => {
+              event.key === "Enter" && handleSubmit()
+            }}
         />
         <button className="home-btn" onClick={handleSubmit}>Go !</button>
       </div>

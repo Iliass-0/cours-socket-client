@@ -20,7 +20,11 @@ function ChatFooter({socket}) {
         <input 
           type="text"
           className="message"
+          value={message}
           onChange={(event) => setMessage(event.target.value)}
+          onKeyDown={(event) => {
+            event.key === "Enter" && sendMessage()
+          }}
           placeholder="Your Message..."
         />
         <button className="sendBtn" onClick={sendMessage}>Send</button>
